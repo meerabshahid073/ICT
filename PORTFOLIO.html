@@ -1,166 +1,292 @@
-<!-- aboutus.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meerab Shahid Portfolio (Combined)</title>
     <style>
+        /* General Styles: Setting font, background, and default text color */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background-color: #f0f2f5; 
+            color: #333; 
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
+
+        /* Header Styles: Defines the top banner design */
         header {
-            background: #2c3e50;
-            padding: 20px;
+            background-color: #2c3e50; 
             color: white;
+            padding: 2.5rem 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            position: sticky; /* Keeps header/nav visible */
+            top: 0;
+            z-index: 100;
         }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Navigation Bar Styles */
         nav {
-            background: #e0e0e0;
-            padding: 10px;
+            background-color: #34495e; 
+            padding: 1rem 0;
             text-align: center;
         }
-        nav a {
-            color: #333;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        img.profile {
-            width: 200px;
-            border-radius: 10px;
-        }
-        footer {
-            background: #2c3e50;
-            color: #333;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>About Us</h1>
-    </header>
 
-    <nav>
-        <a href="aboutus.html">About Us</a>
-        <a href="projects.html">Projects</a>
-    </nav>
-
-    <div class="container">
-        <h2>Welcome to Meerab Shahid's Portfolio</h2>
-        <p>This is a simple HTML & CSS portfolio project. You can replace this with your own information.</p>
-        <img src="https://via.placeholder.com/200" class="profile" />
-
-        <h3>Introduction</h3>
-        <p>My name is Meerab Shahid. I am a CS student at KINNAIRD College for Women, Lahore. I am a student at KINNAIRD College for Women, Lahore. This portfolio shows my work and skills.</p>
-    </div>
-
-    <footer>
-        <p>© 2025 Portfolio Website</p>
-    </footer>
-</body>
-</html>
-
-
-<!-- projects.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-        }
-        header {
-            background: #8e44ad;
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-        nav {
-            background: #e0e0e0;
-            padding: 10px;
-            text-align: center;
-        }
+        /* Navigation Link Styles: Ensures working links and clear navigation */
         nav a {
             color: white;
-            margin: 0 15px;
             text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        .project-box {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
+            font-weight: 600;
+            padding: 0.8rem 1.8rem;
+            margin: 0 12px;
             border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        footer {
-            background: #8e44ad;
-            color: white;
+
+        nav a:hover, nav a.active {
+            background-color: #5fa8d3; 
+            transform: translateY(-2px);
+        }
+        
+        /* Main Container: Centralizes content and applies padding/shadow */
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* About Me Section Layout (Flexbox for image/text side-by-side) */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .content-text {
+            flex: 2; 
+            min-width: 300px; 
+        }
+
+        .content-image {
+            flex: 1; 
+            min-width: 200px; 
             text-align: center;
-            padding: 10px;
+        }
+
+        .profile-picture {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 50%; 
+            border: 5px solid #5fa8d3;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* Heading Styles (h2): Applies accent and bottom border */
+        h2 {
+            color: #2c3e50; 
+            border-bottom: 2px solid #a8dadc; 
+            padding-bottom: 12px;
+            margin-top: 35px;
+            font-size: 2em;
+            width: 100%; 
+        }
+        
+        h3 {
+            color: #34495e; 
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .education-list {
+            list-style: disc;
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        /* Projects Grid Layout */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        /* Individual Project Card Styling */
+        .project-card {
+            background-color: #fbfbfc; 
+            padding: 25px;
+            border-left: 6px solid #5fa8d3; 
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .project-card p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Skills List Styling */
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
             margin-top: 20px;
+        }
+        
+        /* Individual Skill Tag Styling */
+        .skill-list li {
+            background-color: #e0f2f7; 
+            color: #1a5e7b; 
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Contact Section Styling */
+        address {
+            font-style: normal;
+            line-height: 2;
+            margin-top: 20px;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1.8rem 0;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+        
+        /* Media Query for Tablet/Desktop Grid */
+        @media (min-width: 768px) {
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+         @media (max-width: 600px) {
+            .about-content {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Projects & Contact</h1>
+        <h1>Meerab Shahid Portfolio</h1>
+        <p>Student of Computer Science, Kinnaird College</p>
     </header>
 
     <nav>
-        <a href="aboutus.html">About Us</a>
-        <a href="projects.html">Projects</a>
+        <a href="#about-section" class="active">About Me</a>
+        <a href="#projects-section">Projects & Skills</a>
+        <a href="#contact-section">Get In Touch</a>
     </nav>
 
-    <div class="container">
-        <h2>My Projects</h2>
+    <main class="container">
 
-        <div class="project-box">
-            <h3>Project 1</h3>
-            <p>Description of project goes here.</p>
-        </div>
+        <section id="about-section">
+            <h2 style="margin-top: 5px;">👋 About Meerab Shahid</h2>
+            <div class="about-content">
+                
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/250/2c3e50/ffffff?text=Meerab+Shahid" 
+                             alt="Professional headshot of Meerab Shahid" 
+                             class="profile-picture">
+                </div>
 
-        <div class="project-box">
-            <h3>Project 2</h3>
-            <p>Description of project goes here.</p>
-        </div>
+                <div class="content-text">
+                    <p>
+                        Hello! I am **Meerab Shahid**, a dedicated first-semester student in the Computer Science department at **Kinnaird College for Women**. I have a strong passion for logical problem-solving and an eagerness to master the foundations of software development.
+                    </p>
+                    <p>
+                        My goal is to leverage my academic knowledge in a practical environment and continuously expand my skill set to build impactful and efficient solutions. I believe in the power of clean code and structured design.
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </section>
+        
+        <hr>
 
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Basic Programming</li>
-        </ul>
+        <section id="projects-section">
+            <h2>💻 Projects Showcase (From 1st Semester Learnings)</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>Basic Calculator Program (C++)</h3>
+                    <p>
+                        **Description:** Developed a command-line calculator using C++ as part of my Introduction to Programming course. Demonstrated fundamental concepts like user input/output, conditional statements, and arithmetic operations.
+                    </p>
+                    <p>**Key Learnings:** Basic syntax, data types, function calls, and debugging simple logical errors.</p>
+                    <a href="https://github.com/meerab-shahid-cs" style="color: #5fa8d3; font-weight: bold; display: inline-block; margin-top: 10px;">View Code (To be updated on GitHub) &rarr;</a>
+                </article>
+                
+                <article class="project-card">
+                    <h3>Semantic HTML & CSS Portfolio Site</h3>
+                    <p>
+                        **Description:** Designed and implemented this portfolio using pure HTML and CSS, adhering to semantic structuring principles and responsive design practices.
+                    </p>
+                    <p>**Key Learnings:** Document Object Model (DOM), CSS box model, responsive layout techniques, and effective internal navigation.</p>
+                    <a href="#about-section" style="color: #5fa8d3; font-weight: bold; display: inline-block; margin-top: 10px;">View Demo (This Site) &rarr;</a>
+                </article>
+            </div>
+            
+            <h2 id="skills-sub-section">⚙️ Technical Skills & Competencies</h2>
+            <ul class="skill-list">
+                <li>HTML5 (Semantic Structure)</li>
+                <li>CSS3 (Styling & Layout)</li>
+                <li>C++ (Basic Programming)</li>
+                <li>Problem-Solving & Logic</li>
+                <li>Microsoft Office Suite</li>
+                <li>Fundamentals of ICT</li>
+                <li>Team Collaboration</li>
+            </ul>
+        </section>
 
-        <h2>Contact Us</h2>
-        <p>Email: example@gmail.com</p>
-        <p>Phone: 0300-0000000</p>
-    </div>
+        <hr>
+
+        <section id="contact-section">
+            <h2>📞 Get In Touch / Contact Us</h2>
+            <p>I'm always open to discussing new opportunities or connecting with fellow students and professionals. Feel free to reach out!</p>
+            <address>
+                <p>
+                    **Email:** meerab.shahid@example.edu.pk <br>
+                    **Phone:** 0123456789 <br>
+                    **GitHub:** <a href="https://github.com/meerab-shahid-cs" style="color: #5fa8d3;">github.com/meerab-shahid-cs</a>
+                </p>
+            </address>
+        </section>
+        
+    </main>
 
     <footer>
-        <p>© 2025 Portfolio Website</p>
+        <p>&copy; 2025 Meerab Shahid | Kinnaird College CS Project.</p>
     </footer>
 </body>
 </html>
